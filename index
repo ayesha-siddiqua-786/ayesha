@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Ticket Reservation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="loginPage">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+  </div>
+
+  <!-- Sign Up Page -->
+  <div id="signupPage" style="display: none;">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- Flight Listings -->
+  <div id="flightListings" style="display: none;">
+    <h2>Flight Listings</h2>
+    <div id="flights"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function showSignup() {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('signupPage').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('signupPage').style.display = 'none';
+      document.getElementById('loginPage').style.display = 'block';
+    }
+
+    // Dummy flight data (replace with actual data fetched from the server)
+    const flights = [
+      { id: 1, name: 'Flight 1', timing: '10:00 AM', seatsAvailable: 50 },
+      { id: 2, name: 'Flight 2', timing: '12:00 PM', seatsAvailable: 30 },
+      { id: 3, name: 'Flight 3', timing: '3:00 PM', seatsAvailable: 20 },
+    ];
